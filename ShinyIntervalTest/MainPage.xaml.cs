@@ -14,7 +14,8 @@ namespace ShinyIntervalTest
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if ((await _manager.RequestAccess(AccessRequestFlags.TimeSensitivity)) is Shiny.AccessState.Available or Shiny.AccessState.Restricted)
+            Shiny.AccessState accessState = await _manager.RequestAccess(AccessRequestFlags.TimeSensitivity);
+            if (accessState is Shiny.AccessState.Available or Shiny.AccessState.Restricted)
             {
                 await SendNotification();
             }
