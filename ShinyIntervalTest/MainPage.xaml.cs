@@ -37,7 +37,7 @@ namespace ShinyIntervalTest
             }
             catch (InvalidOperationException ex)
             {
-                await Shell.Current.DisplayAlert("Unseccessful", ex.ToString(), "Ok");
+                await Shell.Current.DisplayAlert("Unsuccessful", ex.ToString(), "Ok");
             }
         }
     }
